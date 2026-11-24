@@ -1,0 +1,104 @@
+### GET - Mengambil semua kategori
+GET http://localhost:5000/api/kategori
+
+
+### POST - Menambahkan kategori baru
+POST http://localhost:5000/api/kategori
+Content-Type: application/json
+
+{
+  "nama_kategori": "Instalasi Software",
+  "deskripsi": "Instalasi dan konfigurasi perangkat lunak"
+}
+
+### TEST - Koneksi database
+GET http://localhost:5000/api/db-test
+
+### PUT - Mengubah kategori
+PUT http://localhost:5000/api/kategori/1
+Content-Type: application/json
+
+{
+  "nama_kategori": "Perbaikan Hardware",
+  "deskripsi": "Perbaikan komponen hardware perangkat"
+}
+
+### DELETE - Menghapus kategori
+DELETE http://localhost:5000/api/kategori/2
+
+
+### TEST - POST nama kategori kosong
+POST http://localhost:5000/api/kategori
+Content-Type: application/json
+
+{
+  "nama_kategori": "",
+  "deskripsi": "Percobaan validasi"
+}
+
+### TEST - POST kategori duplikat
+POST http://localhost:5000/api/kategori
+Content-Type: application/json
+
+{
+  "nama_kategori": "Perbaikan Hardware",
+  "deskripsi": "Percobaan data duplikat"
+}
+
+
+### TEST - PUT kategori tidak ditemukan
+PUT http://localhost:5000/api/kategori/999999
+Content-Type: application/json
+
+{
+  "nama_kategori": "Kategori Percobaan",
+  "deskripsi": "Tes ID tidak ditemukan"
+}
+
+### TEST - PUT ID tidak valid
+PUT http://localhost:5000/api/kategori/abc
+Content-Type: application/json
+
+{
+  "nama_kategori": "Kategori Percobaan",
+  "deskripsi": "Tes ID tidak valid"
+}
+
+### TEST - DELETE ID tidak valid
+DELETE http://localhost:5000/api/kategori/abc
+
+### TEST - DELETE kategori tidak ditemukan
+DELETE http://localhost:5000/api/kategori/999999
+
+### TEST - PUT nama kategori duplikat
+PUT http://localhost:5000/api/kategori/2
+Content-Type: application/json
+
+{
+  "nama_kategori": "Hardware",
+  "deskripsi": "Tes nama kategori duplikat"
+}
+
+
+
+### GET - Semua jenis perangkat
+GET http://localhost:5000/api/jenis-perangkat
+
+### POST - Tambah jenis perangkat
+POST http://localhost:5000/api/jenis-perangkat
+Content-Type: application/json
+
+{
+  "nama_jenis": "Speaker"
+}
+
+### PUT - Mengubah jenis perangkat
+PUT http://localhost:5000/api/jenis-perangkat/1
+Content-Type: application/json
+
+{
+  "nama_jenis": "Laptop / Notebook"
+}
+
+### DELETE - Menghapus jenis perangkat
+DELETE http://localhost:5000/api/jenis-perangkat/4
